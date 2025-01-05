@@ -1,0 +1,34 @@
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+}
+
+.todo-page {
+  height: 100vh;
+  display: flex;
+  padding: 2rem;
+
+  &__sidebar {
+    width: 20%;
+    height: 100vh;
+    background-color: $color-primary-dark;
+  }
+
+  &__content {
+    width: 80%;
+    background-color: $color-primary;
+  }
+}
+
