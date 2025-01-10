@@ -9,26 +9,54 @@
 
 html {
   font-size: 62.5%;
+  background-color: $color-grey-bg;
 }
 
 body {
   box-sizing: border-box;
+  margin: auto;
+}
+
+.page-container {
+  height: 100vh;
+  padding: 10rem;
 }
 
 .todo-page {
-  height: 100vh;
   display: flex;
-  padding: 2rem;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 1rem;
+  box-shadow: 0 0 0.5rem 0.1rem rgba(0, 0, 0, 0.2);
 
   &__sidebar {
     width: 20%;
-    height: 100vh;
-    background-color: $color-primary-dark;
+    padding: 1.5rem 0 0 1.5rem;
+    background-color: $color-primary-sidebar;
+
+    &-header {
+      height: 5%;
+      display: flex;
+
+      &--image-container {
+        width: 20%;
+        height: 100%;
+        border-radius: 50%;
+        overflow: hidden;
+      }
+
+      .profile-image {
+        height: 100%;
+        transform: translateX(-1rem);
+      }
+    }
   }
 
   &__content {
     width: 80%;
-    background-color: $color-primary;
+    padding: 1.5rem 0 0 1.5rem;
+    background-color: $color-white;
   }
 }
 

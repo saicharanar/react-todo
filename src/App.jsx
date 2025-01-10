@@ -1,3 +1,6 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import React from "react";
+
 const initialData = [
     {
         id: 1,
@@ -80,23 +83,29 @@ const initialData = [
 
 
 function App() {
-  return (
-    <div className="todo-page">
-        <aside className="todo-page__sidebar">
-            <header className="todo-page__sidebar-header heading-primary">
-                <h1>ToDo</h1>
-            </header>
-            <div className="todo-page__sidebar-search">
-                <input type="text"/>
+    return (
+        <div className="page-container">
+            <div className="todo-page">
+                <aside className="todo-page__sidebar">
+                    <header className="todo-page__sidebar-header heading-primary">
+                        <div className="todo-page__sidebar-header--image-container">
+                            <img src="src/assets/profile.jpg" alt="profile" className="profile-image"/>
+                        </div>
+                        <h1>Denise</h1>
+                        <FontAwesomeIcon icon="fa-solid fa-chevron-down" />
+                    </header>
+                    <div className="todo-page__sidebar-search">
+                        <input type="text"/>
+                    </div>
+                    <nav>
+                        <ul>
+                        </ul>
+                    </nav>
+                </aside>
+                <main className="todo-page__content"></main>
             </div>
-            <nav>
-                <ul>
-                </ul>
-            </nav>
-        </aside>
-        <main className="todo-page__content"></main>
-    </div>
-  );
+        </div>
+    );
 }
 
 export default App;
