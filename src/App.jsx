@@ -1,4 +1,4 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import React from "react";
 
 const initialData = [
@@ -83,22 +83,34 @@ const initialData = [
 
 
 function App() {
+    const [data, setData] = React.useState(initialData);
+
+    function handleClick(index) {
+        setData(prevState => {
+            const newState = [...prevState];
+            newState[index] = {...newState[index], name: 'modified'};
+            return newState;
+        });
+    }
+
+
     return (
         <div className="page-container">
             <div className="todo-page">
                 <aside className="todo-page__sidebar">
                     <header className="todo-page__sidebar-header heading-primary">
-                        <div className="todo-page__sidebar-header--image-container">
-                            <img src="src/assets/profile.jpg" alt="profile" className="profile-image"/>
-                        </div>
-                        <h1>Denise</h1>
-                        <FontAwesomeIcon icon="fa-solid fa-chevron-down" />
+                        <div className="todo-page__sidebar-header--image-container"></div>
+                        <h1>Denise Rolf</h1>
                     </header>
-                    <div className="todo-page__sidebar-search">
-                        <input type="text"/>
+                    <div className="todo-page__sidebar-add-list">
+                        <input type="text" className="add-list-textbox" placeholder="List name"/>
+                        <button className="add-list-button">&#43;</button>
                     </div>
-                    <nav>
+                    <nav className="todo-page__sidebar-lists">
                         <ul>
+                            {data.map((item, index) => {
+                                return <li key={item.id} onClick={() => handleClick(index)}>{item.name}</li>
+                            })}
                         </ul>
                     </nav>
                 </aside>
